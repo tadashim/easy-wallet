@@ -11,7 +11,7 @@ export default class WalletModel {
   private localStorageKey = 'nem-wallet'
 
   constructor() {
-    this.load().then(result => {
+    this.load().then((result) => {
       console.log(result)
       if (result === null) {
         const wallet = this.nem.createAccount()
@@ -21,7 +21,7 @@ export default class WalletModel {
       } else {
         this.getAccount()
       }
-    }).catch(error => {
+    }).catch((error) => {
       console.error(error)
     })
   }
@@ -68,5 +68,4 @@ export default class WalletModel {
       publicKey: this.publicKey,
     }
   }
-
 }

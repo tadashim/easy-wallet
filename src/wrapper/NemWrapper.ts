@@ -18,7 +18,7 @@ export default class NemWrapper {
     const password = 'self-made-nem-wallet'
     const wallet = nem.model.wallet.createPRNG(walletName, password, this.net)
     const common = nem.model.objects.create('common')(password, '')
-    const account = wallet.account[0]
+    const account = wallet.accounts[0]
     console.log('createAccount', account)
     nem.crypto.helpers.passwordToPrivatekey(common, account, account.algo)
     return {
@@ -33,7 +33,7 @@ export default class NemWrapper {
   }
 
   // Transaction for NEM.
-  public async sendNem(address: string, privateKey: string, amount: number,message: string) {
+  public async sendNem(address: string, privateKey: string, amount: number, message: string) {
     const common = nem.model.objects.create('common')('', privateKey)
     const transferTransaction = nem.model.objects.create('transferTransaction')(address, amount, message)
     const transactionEntity = nem.model.transactions.prepare('transferTransaction')(common, transferTransaction, this.net)

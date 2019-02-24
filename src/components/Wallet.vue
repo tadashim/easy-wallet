@@ -1,5 +1,5 @@
 <template>
-  <dev class="wallet">
+  <div class="wallet">
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-container fluid>
@@ -65,7 +65,7 @@
         </v-container>
       </v-card>
     </v-flex>
-  </dev>
+  </div>
 </template>
 
 <script lang="ts">
@@ -143,7 +143,7 @@ export default class Wallet extends Vue {
     this.validation.push(this.rules.amountInput(`${this.toAmount}`))
     this.validation.push(this.rules.messageRules(this.message))
     const error: any[] = this.validation.filter((obj: any) => obj !== true)
-    return (error.length === 0) ? true : false  
+    return (error.length === 0) ? true : false
   }
 
   private clear() {
