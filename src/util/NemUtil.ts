@@ -1,6 +1,6 @@
 import encoding from 'encoding-japanese'
 
-export default class NumUtil {
+export default class NemUtil {
   // Get JSON for Invoice. v:2, type;1 account, type:2 invoice.
   public static getQRcodeJson(v: number, type: number, name: string, addr: string, amount: number, msg: string) {
     const params = { type, data: { name, addr, amount: amount * Math.pow(10, 6), msg }, v }
