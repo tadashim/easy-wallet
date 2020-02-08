@@ -1,0 +1,25 @@
+{
+  "name": "linebot-lab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadashim/linebot-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tadashim/linebot-lab/issues"
+  },
+  "homepage": "https://github.com/tadashim/linebot-lab#readme",
+  "description": "",
+  "dependencies": {
+    "@line/bot-sdk": "^6.8.4",
+    "express": "^4.17.1"
+  }
+}
