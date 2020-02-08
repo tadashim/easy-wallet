@@ -27,7 +27,7 @@ function handleEvent(event) {
   }
 
   let mes = ''
-  if (event.message.text === '天気を教えて') {
+  if (event.message.text === '今日の花粉は？') {
     mes = 'ちょっと待ってね'
     getNodeVer(event.source.userId)
   } else {
@@ -41,12 +41,15 @@ function handleEvent(event) {
 }
 
 const getNodeVer = async (userId) => {
-  const res = await axios.get('http://weather.livedoor.com/forecast/webservice/json/v1?city=400040')
+  const res = await axios.get('https://tenki.jp/pollen/3/16/4410/13101/')
   const item = res.data
+  const splitText = item.split('今日の天気')[1]
+  const result = splitText.match(/class="pollen-telop">(.*?)<\/span>/)[1]
+  console.log(result)
 
   await client.pushMessage(userId, {
     type: 'text',
-    text: item.description.text
+    text: `今日の千代田区の花粉は${result}よ！`
   })
 }
 
