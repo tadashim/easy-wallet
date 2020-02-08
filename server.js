@@ -2,6 +2,7 @@
 
 const express = require('express')
 const line = require('@line/bot-sdk')
+const axios = require('axios')
 const PORT = process.env.PORT || 3000
 
 const config = {
@@ -13,7 +14,6 @@ const app = express()
 
 app.post('/webhook', line.middleware(config), (req, res) => {
   console.log(req.body.events)
-
   Promise
     .all(req.body.events.map(handleEvent))
     .then(result => res.json(result))
@@ -26,16 +26,27 @@ function handleEvent(event) {
     return Promise.resolve(null)
   }
 
-  let replyText = ''
-  if (event.message.text === 'こんにちは') {
-    replyText = 'こんばんはの時間ですよ'
+  let mes = ''
+  if (event.message.text === '天気を教えて') {
+    mes = 'ちょっと待ってね'
+    getNodeVer(event.source.userId)
   } else {
-    replyText = 'うざ'
+    mes = event.message.text
   }
 
   return client.replyMessage(event.replyToken, {
     type: 'text',
-    text: replyText
+    text: mes
+  })
+}
+
+const getNodeVer = async (userId) => {
+  const res = await axios.get('http://weather.livedoor.com/forecast/webservice/json/v1?city=400040')
+  const item = res.data
+
+  await client.pushMessage(userId, {
+    type: 'text',
+    text: item.description.text
   })
 }
 
