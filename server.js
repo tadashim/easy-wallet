@@ -6,8 +6,8 @@ const axios = require('axios')
 const PORT = process.env.PORT || 3000
 
 const config = {
-  channelSecret: '1ee3a38c109374b683b77a0fd974e485',
-  channelAccessToken: 'jo6xv3TJZq5++8SnXJ7igEL5SA+9nWGjhMJouvez0k/rIHnPCGskLHhBhtuycIxlwJMyraM+YLjhXc7XbA+rRMl5WfPQ+5IP9Sre0etwoeSsI3LfzEMgoRzrvroM+dvwxYBxQq+ZoyUpGvDyPSGN9QdB04t89/1O/w1cDnyilFU='
+  channelSecret: '',
+  channelAccessToken: ''
 }
 
 const app = express()
