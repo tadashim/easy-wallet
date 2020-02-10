@@ -1,0 +1,119 @@
+{
+  "contracts": {
+    "SpaBot": {
+      "address": "0x0E696947A06550DEf604e82C26fd9E493e576337",
+      "constructorCode": "608060405234801561001057600080fd5b50610736806100206000396000f3fe",
+      "bodyBytecodeHash": "ca2ed4974229586479361164c7ae5a304907486c714766baad4ec0984fff34f6",
+      "localBytecodeHash": "ed3d69506a43a86c45892b28aa8c1a8135f046eaa27bba83963f74a22932f48f",
+      "deployedBytecodeHash": "ed3d69506a43a86c45892b28aa8c1a8135f046eaa27bba83963f74a22932f48f",
+      "types": {
+        "t_struct<SpaBot.Location>": {
+          "id": "t_struct<SpaBot.Location>",
+          "kind": "struct",
+          "label": "SpaBot.Location",
+          "members": [
+            {
+              "label": "longitude",
+              "astId": 3,
+              "type": "t_int256",
+              "src": "73:16:0"
+            },
+            {
+              "label": "latitude",
+              "astId": 5,
+              "type": "t_int256",
+              "src": "99:15:0"
+            }
+          ]
+        },
+        "t_int256": {
+          "id": "t_int256",
+          "kind": "elementary",
+          "label": "int256"
+        },
+        "t_mapping<t_struct<SpaBot.Location>>": {
+          "id": "t_mapping<t_struct<SpaBot.Location>>",
+          "valueType": "t_struct<SpaBot.Location>",
+          "label": "mapping(key => SpaBot.Location)",
+          "kind": "mapping"
+        },
+        "t_address_payable": {
+          "id": "t_address_payable",
+          "kind": "elementary",
+          "label": "address payable"
+        },
+        "t_mapping<t_address_payable>": {
+          "id": "t_mapping<t_address_payable>",
+          "valueType": "t_address_payable",
+          "label": "mapping(key => address payable)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "SpaBot",
+          "path": "contracts/SpaBot.sol",
+          "label": "locations",
+          "astId": 10,
+          "type": "t_mapping<t_struct<SpaBot.Location>>",
+          "src": "127:44:0"
+        },
+        {
+          "contract": "SpaBot",
+          "path": "contracts/SpaBot.sol",
+          "label": "addresses",
+          "astId": 14,
+          "type": "t_mapping<t_address_payable>",
+          "src": "177:51:0"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {
+    "@openzeppelin/contracts-ethereum-package/StandaloneERC20": [
+      {
+        "address": "0x2612Af3A521c2df9EAF28422Ca335b04AdF3ac66",
+        "version": "2.4.0",
+        "implementation": "0x254dffcd3277C0b1660F6d42EFbB754edaBAbC2B",
+        "admin": "0x67B5656d60a809915323Bf2C40A8bEF15A152e3e",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x630589690929E9cdEFDeF0734717a9eF3Ec7Fcfe",
+        "version": "2.4.0",
+        "implementation": "0x254dffcd3277C0b1660F6d42EFbB754edaBAbC2B",
+        "admin": "0x67B5656d60a809915323Bf2C40A8bEF15A152e3e",
+        "kind": "Upgradeable"
+      }
+    ],
+    "linebot-lab/SpaBot": [
+      {
+        "address": "0xDb56f2e9369E0D7bD191099125a3f6C370F8ed15",
+        "version": "1.0.0",
+        "implementation": "0x0E696947A06550DEf604e82C26fd9E493e576337",
+        "admin": "0x67B5656d60a809915323Bf2C40A8bEF15A152e3e",
+        "kind": "Upgradeable"
+      }
+    ]
+  },
+  "manifestVersion": "2.2",
+  "dependencies": {
+    "@openzeppelin/contracts-ethereum-package": {
+      "package": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+      "version": "2.4.0",
+      "customDeploy": true
+    }
+  },
+  "version": "1.0.0",
+  "proxyAdmin": {
+    "address": "0x67B5656d60a809915323Bf2C40A8bEF15A152e3e"
+  }
+}
