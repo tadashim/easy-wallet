@@ -20,7 +20,16 @@
   "description": "",
   "dependencies": {
     "@line/bot-sdk": "^6.8.4",
+    "@openzeppelin/contract-loader": "^0.6.1",
+    "@openzeppelin/contracts-ethereum-package": "^2.4.0",
     "axios": "^0.19.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "web3": "^1.2.6"
+  },
+  "devDependencies": {
+    "@openzeppelin/cli": "^2.6.0",
+    "@openzeppelin/contracts": "^2.5.0",
+    "@truffle/hdwallet-provider": "^1.0.30",
+    "ganache-cli": "^6.9.0"
   }
 }
